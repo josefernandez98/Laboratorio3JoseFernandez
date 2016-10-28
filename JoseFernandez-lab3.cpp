@@ -7,6 +7,7 @@ using namespace std;
 //int*** crearMatriz(int);
 void imprimirMatriz(int, int**, int);
 void Permutaciones (string);
+void imprimirPasos(int**, int, int);
 int Gregor();
 int** llenarMatriz(int**, int*, int);
 
@@ -48,8 +49,8 @@ int  main(int argc, char const *argv[]) {
 				matriz[i] = new int[size];
 			}//Fin del for
 			matriz = llenarMatriz(matriz, polinomio, size);
-			imprimirMatriz(size, matriz, a);
-			for (int i = 0; i < 5; ++i) {
+			imprimirPasos(matriz,grado,a);
+			for (int i = 0; i < 3; ++i) {
 				delete[] matriz[i];
 				matriz[i] = NULL;	
 			}
@@ -69,6 +70,26 @@ int  main(int argc, char const *argv[]) {
 	} while (opcion != 4);
 	return 0;
 }//Fin del main
+
+void imprimirPasos(int** matriz, int grado, int a) {
+	int auxiliar = 0;
+	for (int i = grado; i >= 0; i--) {
+		if (i == grado) {
+			matriz[2][0] = matriz[0][0];
+			auxiliar = matriz[0][0];
+			cout << endl; 
+			imprimirMatriz(grado+1, matriz, a);
+		}
+		if (i < grado) {
+			auxiliar = auxiliar * a;
+			matriz[1][grado - i] = auxiliar;
+			matriz[2][grado - i] = auxiliar + matriz[0][grado - i];
+			auxiliar = auxiliar + matriz[0][grado - i];
+			cout << endl;
+			imprimirMatriz(grado+1, matriz, a);
+		}
+	}
+}
 
 void Permutaciones (string numeros) {
 	if (numeros.size() == 1) {
@@ -225,6 +246,7 @@ void imprimirMatriz(int size, int** matriz, int a) {
 				cout << "|";
 			}
 		}
+		cout << endl;
 		cout << endl;
 	}
 	cout << "--------------------" << endl;
