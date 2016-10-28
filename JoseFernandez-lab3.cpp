@@ -88,11 +88,11 @@ void Permutaciones (string numeros) {
 	}//
 	if (numeros.size() == 4) {
 		cout << numeros[0] << numeros[1] << numeros[2] << numeros[3] << endl;
-		cout << numeros[0] << numeros[1] << numeros[2] << numeros[3] << endl;
-		cout << numeros[0] << numeros[1] << numeros[2] << numeros[3] << endl;
-		cout << numeros[0] << numeros[1] << numeros[2] << numeros[3] << endl;
-		cout << numeros[0] << numeros[1] << numeros[2] << numeros[3] << endl;
-		cout << numeros[0] << numeros[1] << numeros[2] << numeros[3] << endl;
+		cout << numeros[0] << numeros[1] << numeros[3] << numeros[2] << endl;
+		cout << numeros[0] << numeros[3] << numeros[1] << numeros[2] << endl;
+		cout << numeros[0] << numeros[3] << numeros[2] << numeros[1] << endl;
+		cout << numeros[0] << numeros[2] << numeros[3] << numeros[1] << endl;
+		cout << numeros[0] << numeros[2] << numeros[1] << numeros[3] << endl;
 
 		cout << numeros[1] << numeros[0] << numeros[2] << numeros[3] << endl;
 		cout << numeros[1] << numeros[0] << numeros[3] << numeros[2] << endl;
