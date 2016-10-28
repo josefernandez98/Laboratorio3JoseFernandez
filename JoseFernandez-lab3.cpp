@@ -72,7 +72,7 @@ int  main(int argc, char const *argv[]) {
 
 void Permutaciones (string numeros) {
 	if (numeros.size() == 1) {
-		cout << numeros;
+		cout << numeros << endl;
 	}//
 	if (numeros.size() == 2) {
 		cout << numeros[0] << numeros[1] << endl;
@@ -108,7 +108,12 @@ void Permutaciones (string numeros) {
 		cout << numeros[2] << numeros[3] << numeros[1] << numeros[0] << endl;
 		cout << numeros[2] << numeros[3] << numeros[0] << numeros[1] << endl;
 
-
+		cout << numeros[3] << numeros[1] << numeros[2] << numeros[0] << endl;
+		cout << numeros[3] << numeros[1] << numeros[0] << numeros[2] << endl;
+		cout << numeros[3] << numeros[0] << numeros[1] << numeros[2] << endl;
+		cout << numeros[3] << numeros[0] << numeros[2] << numeros[1] << endl;
+		cout << numeros[3] << numeros[2] << numeros[0] << numeros[1] << endl;
+		cout << numeros[3] << numeros[2] << numeros[1] << numeros[0] << endl;
 	}
 }//Fin del metodo
 
