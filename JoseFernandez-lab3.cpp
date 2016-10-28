@@ -1,11 +1,12 @@
 #include <iostream>
 #include <math.h>	
 #include <string>
+#include <sstream>
 using namespace std;
 
 //int*** crearMatriz(int);
 void imprimirMatriz(int, int**, int);
-void Permutaciones (int*);
+void Permutaciones (string);
 int Gregor();
 int** llenarMatriz(int**, int*, int);
 
@@ -48,22 +49,55 @@ int  main(int argc, char const *argv[]) {
 			}//Fin del for
 			matriz = llenarMatriz(matriz, polinomio, size);
 			imprimirMatriz(size, matriz, a);
+			for (int i = 0; i < 5; ++i) {
+				delete[] matriz[i];
+				matriz[i] = NULL;	
+			}
+			delete[] matriz;
 		}//Fin del if 2
 		if (opcion == 3) {
-			string numero = "";
+			int numero = 0;
 			cout << "Ingrese el numero:";
 			cin >> numero;
-			int numeros[4];
-			for (int i = 0; i < 4; ++i) {
-				numeros[i] = numero[i];
-			}//Fin del convertor
-			
+			cout << endl;
+			stringstream ss;
+			ss << numero;
+			string valor = ss.str();
+			Permutaciones(valor);
+			cout << endl;
 		}//Fin del if 3
 	} while (opcion != 4);
 	return 0;
 }//Fin del main
 
+void Permutaciones (string numeros) {
+	if (numeros.size() == 1) {
+		cout << numeros;
+	}//
+	if (numeros.size() == 2) {
+		cout << numeros[0] << numeros[1] << endl;
+		cout << numeros[1] << numeros[0] << endl;
+	}//
+	if (numeros.size() == 3) {
+		cout << numeros[0] << numeros[1] << numeros[2] << endl;
+		cout << numeros[0] << numeros[2] << numeros[1] << endl;
+		cout << numeros[1] << numeros[0] << numeros[2] << endl;
+		cout << numeros[1] << numeros[2] << numeros[0] << endl;
+		cout << numeros[2] << numeros[0] << numeros[1] << endl;
+		cout << numeros[2] << numeros[1] << numeros[0] << endl;
+	}//
+	if (numeros.size() == 4) {
+		cout << numeros[0] << numeros[1] << numeros[2] << numeros[3] << endl;
+		cout << numeros[0] << numeros[1] << numeros[2] << numeros[3] << endl;
+		cout << numeros[0] << numeros[1] << numeros[2] << numeros[3] << endl;
+		cout << numeros[0] << numeros[1] << numeros[2] << numeros[3] << endl;
+		cout << numeros[0] << numeros[1] << numeros[2] << numeros[3] << endl;
+		cout << numeros[0] << numeros[1] << numeros[2] << numeros[3] << endl;
 
+
+
+	}
+}//Fin del metodo
 
 int Gregor () {
 	int dia = 1;
@@ -169,14 +203,13 @@ void imprimirMatriz(int size, int** matriz, int a) {
 			if (j == size - 1 && i == 0) {
 				cout << "|" << a;
 			}
+			if (j == size - 1 && i != 0) {
+				cout << "|";
+			}
 		}
 		cout << endl;
 	}
 	cout << "--------------------" << endl;
-}
-
-void Permutaciones (int* arreglo) {
-
 }
 
 
