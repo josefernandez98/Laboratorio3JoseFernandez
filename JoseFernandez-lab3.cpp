@@ -119,7 +119,7 @@ void Permutaciones (string numeros) {
 
 int Gregor () {
 	int dia = 1;
-	int final = 0;
+	int final = 1;
 	for (int i = 1900; i < 2000; ++i) {
 		if (i%4 == 0) {
 			//BISIESTO
@@ -199,7 +199,7 @@ int Gregor () {
 			}//Fin del ano
 		}
 	}//Fin del siglo
-	return final+1;
+	return final;
 }//Fin del metodo
 
 int** llenarMatriz(int**matriz, int* arreglo, int size) {
