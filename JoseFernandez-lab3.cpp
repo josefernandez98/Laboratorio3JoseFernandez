@@ -101,6 +101,13 @@ void Permutaciones (string numeros) {
 		cout << numeros[1] << numeros[3] << numeros[0] << numeros[2] << endl;
 		cout << numeros[1] << numeros[3] << numeros[2] << numeros[0] << endl;
 
+		cout << numeros[2] << numeros[0] << numeros[1] << numeros[3] << endl;
+		cout << numeros[2] << numeros[0] << numeros[3] << numeros[1] << endl;
+		cout << numeros[2] << numeros[1] << numeros[0] << numeros[3] << endl;
+		cout << numeros[2] << numeros[1] << numeros[3] << numeros[0] << endl;
+		cout << numeros[2] << numeros[3] << numeros[1] << numeros[0] << endl;
+		cout << numeros[2] << numeros[3] << numeros[0] << numeros[1] << endl;
+
 
 	}
 }//Fin del metodo
